@@ -10,6 +10,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.pliniodev.composesimpleproject.component.BoxedText
 
 @Composable
 fun View1(action: () -> Unit) {
@@ -20,7 +21,7 @@ fun View1(action: () -> Unit) {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        ShowText(text = "This is view1")
+        BoxedText(text = "This is view1")
         NavButton(action, "Go to view2")
     }
 }
