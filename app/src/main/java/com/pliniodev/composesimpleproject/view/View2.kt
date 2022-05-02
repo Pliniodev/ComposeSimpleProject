@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import com.pliniodev.composesimpleproject.component.BoxedText
 
 @Composable
 fun View2() {
@@ -17,6 +18,6 @@ fun View2() {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        ShowText(text = "This is view1")
+        BoxedText(text = "This is view1")
     }
 }

@@ -8,6 +8,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.pliniodev.composesimpleproject.component.BoxedText
 
 @Composable
 fun Home(action: () -> Unit) {
@@ -18,7 +19,7 @@ fun Home(action: () -> Unit) {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        ShowText(text = "This is Home")
+        BoxedText(text = "This is Home")
         NavButton(action, "Go to view1")
     }
 }

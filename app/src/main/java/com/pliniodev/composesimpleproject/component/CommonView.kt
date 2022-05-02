@@ -1,4 +1,4 @@
-package com.pliniodev.composesimpleproject.view
+package com.pliniodev.composesimpleproject.component
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -51,18 +51,3 @@ import androidx.compose.ui.unit.sp
 //    }
 //}
 
-@Composable
-fun ShowText(text: String) {
-    Box {
-        Text(
-            text = text,
-            fontSize = 32.sp,
-            modifier = Modifier
-                .align(Alignment.Center)
-                .padding(
-                    start = 36.dp,
-                    end = 36.dp
-                )
-        )
-    }
-}
