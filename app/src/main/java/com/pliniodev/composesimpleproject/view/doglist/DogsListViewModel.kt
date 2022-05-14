@@ -1,4 +1,4 @@
-package com.pliniodev.composesimpleproject.view.home
+package com.pliniodev.composesimpleproject.view.doglist
 
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.LiveData
@@ -7,13 +7,10 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.pliniodev.composesimpleproject.domain.repository.DogsApiRepository
 import com.pliniodev.composesimpleproject.presentation.model.BreedPresentation
-import com.pliniodev.composesimpleproject.presentation.model.HeightPresentation
-import com.pliniodev.composesimpleproject.presentation.model.ImagePresentation
-import com.pliniodev.composesimpleproject.presentation.model.WeightPresentation
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-internal class DogsHomeViewModel(
+internal class DogsListViewModel(
     private val api: DogsApiRepository
 ) : ViewModel() {
 

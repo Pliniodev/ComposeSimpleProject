@@ -8,7 +8,7 @@ import com.pliniodev.composesimpleproject.domain.repository.DogsApiRepository
 import com.pliniodev.composesimpleproject.network.constants.BaseUrl
 import com.pliniodev.composesimpleproject.network.retrofit.provideOkHttpClientAuthDogs
 import com.pliniodev.composesimpleproject.data.remoteDataSource.RemoteDataSourceImpl
-import com.pliniodev.composesimpleproject.view.home.DogsHomeViewModel
+import com.pliniodev.composesimpleproject.view.doglist.DogsListViewModel
 import com.pliniodev.composesimpleproject.network.constants.InjectionTag
 import com.pliniodev.composesimpleproject.network.retrofit.BuildRetrofit
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -35,5 +35,5 @@ val dogsModule = module {
 
     single<DogsApiRepository> { DogsApiRepositoryImpl(remoteDataSource = get()) }
 
-    viewModel { DogsHomeViewModel(api = get()) }
+    viewModel { DogsListViewModel(api = get()) }
 }

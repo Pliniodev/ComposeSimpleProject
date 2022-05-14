@@ -11,8 +11,6 @@ import com.pliniodev.composesimpleproject.presentation.model.BreedPresentation
 import com.pliniodev.composesimpleproject.presentation.model.HeightPresentation
 import com.pliniodev.composesimpleproject.presentation.model.ImagePresentation
 import com.pliniodev.composesimpleproject.presentation.model.WeightPresentation
-import com.pliniodev.composesimpleproject.view.home.DogsHomeViewModel
-import org.koin.androidx.compose.getViewModel
 
 class DetailsScreen(breed: BreedPresentation) : Screen {
     val breed = BreedPresentation(
