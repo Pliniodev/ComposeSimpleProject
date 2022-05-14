@@ -9,7 +9,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.withStyle
 
 @Composable
-fun TextLineAsync(text: String, textAnnotated: String? = null) {
+fun TextWithAnnotated(text: String, textAnnotated: String? = null) {
     Text(
         buildAnnotatedString {
             append(text)
@@ -19,6 +19,7 @@ fun TextLineAsync(text: String, textAnnotated: String? = null) {
                     color = Color(0xFF4552B8)
                 )
             ) { textAnnotated?.let(::append) }
-        }
+        },
+        maxLines = 3,
     )
 }

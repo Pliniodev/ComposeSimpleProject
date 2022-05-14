@@ -41,7 +41,7 @@ fun ComposeSimpleProjectTheme(
     MaterialTheme(
         colors = colors,
         typography = Typography,
-        shapes = Shapes,
+        shapes = RoundedCornerShapes,
         content = content
     )
 }

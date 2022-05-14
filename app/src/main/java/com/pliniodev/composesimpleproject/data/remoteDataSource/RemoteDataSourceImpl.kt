@@ -4,7 +4,6 @@ import com.pliniodev.composesimpleproject.data.DogsApiService
 import com.pliniodev.composesimpleproject.data.mapper.BreedsMapper
 import com.pliniodev.composesimpleproject.domain.Breed
 
-
 internal class RemoteDataSourceImpl(
     private val api: DogsApiService
 ) : RemoteDataSource {

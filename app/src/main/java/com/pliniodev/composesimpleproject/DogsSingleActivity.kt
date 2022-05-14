@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import cafe.adriel.voyager.navigator.Navigator
+import com.pliniodev.composesimpleproject.ui.theme.ComposeSimpleProjectTheme
 import com.pliniodev.composesimpleproject.view.doglist.DogsListScreen
 
 class DogsSingleActivity : ComponentActivity() {
@@ -12,7 +13,11 @@ class DogsSingleActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         setContent {
-            Navigator(DogsListScreen())
+            ComposeSimpleProjectTheme(
+                content = {
+                    Navigator(DogsListScreen())
+                }
+            )
         }
     }
 }

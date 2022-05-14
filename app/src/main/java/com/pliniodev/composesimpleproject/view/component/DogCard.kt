@@ -1,18 +1,20 @@
 package com.pliniodev.composesimpleproject.view.component
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Card
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import com.pliniodev.composesimpleproject.presentation.model.BreedPresentation
 
 @Composable
-fun DogCard(onClick: () -> Unit, presentation: BreedPresentation){
+fun DogCard(onClick: () -> Unit, presentation: BreedPresentation) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
@@ -23,24 +25,21 @@ fun DogCard(onClick: () -> Unit, presentation: BreedPresentation){
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(12.dp)
-                .background(color = Color.DarkGray),
+                .padding(12.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
-
             FadeImage(presentation.image?.url)
 
             Column(
                 modifier = Modifier
                     .align(Alignment.CenterVertically)
                     .fillMaxWidth()
-                    .padding(15.dp)
-                    .background(color = Color.Gray),
+                    .padding(15.dp),
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.Start
             ) {
-                TextLineAsync("Breed: ", presentation.name)
-                TextLineAsync("Life span: ", presentation.lifeSpan)
+                TextWithAnnotated("Breed: ", presentation.name)
+                TextWithAnnotated("Life span: ", presentation.lifeSpan)
             }
         }
     }
