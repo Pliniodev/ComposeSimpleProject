@@ -13,11 +13,13 @@ internal class DogsScreenModel(
 
     sealed class State {
         object Init : State()
+        object Loading : State()
         data class Result(val breed: List<BreedPresentation>) : State()
     }
 
     fun getBreedsList(page: Int) {
         coroutineScope.launch(Dispatchers.IO) {
+            mutableState.value = State.Loading
             mutableState.value = State.Result(api.getBreeds(page))
         }
     }
