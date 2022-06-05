@@ -1,25 +1,27 @@
 package com.pliniodev.composesimpleproject.view.home
 
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Button
-import androidx.compose.material.Checkbox
+import androidx.compose.material.Icon
+import androidx.compose.material.IconButton
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
+import androidx.compose.material.TopAppBar
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.twotone.Nightlight
+import androidx.compose.material.icons.twotone.WbSunny
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
 import com.pliniodev.composesimpleproject.view.component.FullDogImage
-import com.pliniodev.composesimpleproject.view.component.default.DefaultTopAppBar
 import com.pliniodev.composesimpleproject.view.doglist.DogsListScreen
 
 class DogsHome(private val isDarkTheme: MutableState<Boolean>) : Screen {
@@ -29,7 +31,23 @@ class DogsHome(private val isDarkTheme: MutableState<Boolean>) : Screen {
         val navigator = LocalNavigator.currentOrThrow
 
         Scaffold(
-            topBar = { DefaultTopAppBar("Dogs home") }
+            topBar = {
+                val materialBlue700 = Color(0xFF1976D2)
+                TopAppBar(
+                    modifier = Modifier.fillMaxWidth(),
+                    title = { Text("Dogs home") },
+                    backgroundColor = materialBlue700,
+                    actions = {
+                        IconButton(onClick = { isDarkTheme.value = isDarkTheme.value.not() }) {
+                            if (isDarkTheme.value) {
+                                Icon(Icons.TwoTone.WbSunny, "")
+                            } else {
+                                Icon(Icons.TwoTone.Nightlight, "")
+                            }
+                        }
+                    }
+                )
+            }
         ) {
             Column(Modifier.fillMaxWidth()) {
                 FullDogImage(url = "https://cdn2.thedogapi.com/images/BJa4kxc4X.jpg")
@@ -46,26 +64,7 @@ class DogsHome(private val isDarkTheme: MutableState<Boolean>) : Screen {
                 ) {
                     Text(text = "Dog breeds")
                 }
-                DarkThemeButton(isDarkTheme)
             }
         }
-    }
-}
-
-@Composable
-fun DarkThemeButton(isDarkTheme: MutableState<Boolean>) {
-
-    Row(
-        modifier = Modifier
-            .padding(8.dp)
-            .fillMaxWidth(),
-        horizontalArrangement = Arrangement.Center
-    ) {
-        Checkbox(
-            modifier = Modifier.align(Alignment.CenterVertically),
-            checked = isDarkTheme.value,
-            onCheckedChange = { isDarkTheme.value = it }
-        )
-        Text(modifier = Modifier.align(Alignment.CenterVertically), text = "Set to darkMode")
     }
 }

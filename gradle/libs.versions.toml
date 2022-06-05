@@ -67,6 +67,7 @@ compose-ui = { module = "androidx.compose.ui:ui", version.ref = "compose" }
 compose-ui-tooling = { module = "androidx.compose.ui:ui-tooling", version.ref = "compose" }
 compose-animation = { module = "androidx.compose.animation:animation", version.ref = "compose" }
 compose-material = { module = "androidx.compose.material:material", version.ref = "compose" }
+compose-material-icons = { module = "androidx.compose.material:material-icons-extended", version.ref = "compose" }
 compose-activity = { module = "androidx.activity:activity-compose", version.ref = "composeActivity" }
 lyricist = { module = "cafe.adriel.lyricist:lyricist", version.ref = "lyricist" }
 lyricist-processor = { module = "cafe.adriel.lyricist:lyricist-processor", version.ref = "lyricist" }
@@ -86,5 +87,5 @@ mockWebServer = { module = "com.squareup.okhttp3:mockwebserver", version.ref = "
 di = ["koin"]
 service = ["coroutines-android", "gson", "gson-converter", "retrofit", "okHttp", "okHttpLogging"]
 android = ["materialDesign", "appCompat", "activity", "lifecycle-runtime", "lifecycle-viewModel", "groupie", "groupie-viewBinding", "coil"]
-compose = ["compose-compiler", "compose-runtime", "compose-ui", "compose-ui-tooling", "compose-animation", "compose-material", "compose-activity", "lyricist", "lyricist-processor", "voyager-navigator", "voyager-navigator-koin", "voyager-navigator-transitions", "koin-compose", "coil-compose"]
+compose = ["compose-compiler", "compose-runtime", "compose-ui", "compose-ui-tooling", "compose-animation", "compose-material", "compose-material-icons", "compose-activity", "lyricist", "lyricist-processor", "voyager-navigator", "voyager-navigator-koin", "voyager-navigator-transitions", "koin-compose", "coil-compose"]
 test = ["junit", "coroutines-test", "mockk", "mockWebServer"]
