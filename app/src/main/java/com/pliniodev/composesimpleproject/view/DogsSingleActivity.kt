@@ -3,7 +3,10 @@ package com.pliniodev.composesimpleproject.view
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import cafe.adriel.voyager.navigator.Navigator
+import com.pliniodev.composesimpleproject.ui.theme.ComposeSimpleProjectTheme
 import com.pliniodev.composesimpleproject.view.home.DogsHome
 
 class DogsSingleActivity : ComponentActivity() {
@@ -12,7 +15,14 @@ class DogsSingleActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         setContent {
-            Navigator(DogsHome())
+            val isDarkTheme = remember { mutableStateOf(false) }
+
+            ComposeSimpleProjectTheme(
+                darkTheme = isDarkTheme.value,
+                content = {
+                    Navigator(DogsHome(isDarkTheme))
+                }
+            )
         }
     }
 }

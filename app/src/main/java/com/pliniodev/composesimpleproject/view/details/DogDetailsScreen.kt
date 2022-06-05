@@ -18,9 +18,7 @@ import com.pliniodev.composesimpleproject.view.component.FullDogImage
 import com.pliniodev.composesimpleproject.view.component.TextForDescription
 import com.pliniodev.composesimpleproject.view.component.default.DefaultTopAppBar
 
-class DogDetailsScreen(selectedDog: BreedPresentation) : Screen {
-
-    private val dog = selectedDog
+class DogDetailsScreen(private val selectedDog: BreedPresentation) : Screen {
 
     @Composable
     override fun Content() {
@@ -31,7 +29,7 @@ class DogDetailsScreen(selectedDog: BreedPresentation) : Screen {
                 Modifier
                     .fillMaxWidth()
             ) {
-                FullDogImage(dog.image?.url)
+                FullDogImage(selectedDog.image?.url)
 
                 Row(
                     Modifier
@@ -47,19 +45,19 @@ class DogDetailsScreen(selectedDog: BreedPresentation) : Screen {
                             )
                             .padding(16.dp)
                     ) {
-                        dog.name?.let { name ->
+                        selectedDog.name?.let { name ->
                             TextForDescription(
                                 title = "Name: ",
                                 description = name
                             )
                         }
-                        dog.height?.metric?.let { metricHeight ->
+                        selectedDog.height?.metric?.let { metricHeight ->
                             TextForDescription(
                                 title = "Height(Metric): ",
                                 description = "$metricHeight cm"
                             )
                         }
-                        dog.temperament?.let { temperament ->
+                        selectedDog.temperament?.let { temperament ->
                             TextForDescription(
                                 title = "Temperament: ",
                                 description = temperament
